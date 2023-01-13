@@ -1,7 +1,7 @@
-# Chap 4 if
+import random
 
 limits = 20
-tweets = "pass" * 6
+tweets = "pass" * random.randint(1, 10) # 1에서 10사이의 정수가 임의로 발생
 diff = limits - len(tweets)
 # if diff := limits - len(tweets) >= 0:
 if diff >=0:
@@ -9,18 +9,3 @@ if diff >=0:
 else:
     print(f'제한 글자 수 {abs(diff)}초과')
 
-vowels = 'aeiou'
-letter = 'u'
-if letter not in vowels:
-    print("실행 안됨!")
-else:
-    print("실행 됨!")
-
-a = []
-
-print(bool(a))
-a.append(5)
-print(bool(a))
-print(bool(set()))
-print(bool(dict()))
-print(bool("ace"))
