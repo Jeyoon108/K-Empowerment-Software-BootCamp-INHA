@@ -8,4 +8,3 @@ if diff >=0:
     print(tweets)
 else:
     print(f'제한 글자 수 {abs(diff)}초과')
-
