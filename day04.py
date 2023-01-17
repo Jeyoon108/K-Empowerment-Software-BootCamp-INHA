@@ -1,13 +1,8 @@
-# list comprehension & generator
+# Chap 7 #4 ~ #7
 
-# odd_lists = []
-# for i in range(1, 11):
-#     if i % 2 == 1:
-#         odd_lists.append(i)
-# print(odd_lists)
-
-odd_lists = [i for i in range(1, 11) if i % 2 == 1]
-print(odd_lists, type(odd_lists))
-odd_tuples = (i for i in range(1, 11) if i % 2 == 1)
-print(odd_tuples, type(odd_tuples))  # tuple comprehension은 존재하지않는다.
-print(type(range(1, 101)))
+things = ['mozzarella', 'cinderella', 'salmonella']
+things[1] = things[1].capitalize()
+things[0] = things[0].upper()
+print(things)
+print(f'Delete the \'{things.pop()}\' from things, get Nobel Prize')
+print(things)
