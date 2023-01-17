@@ -1,28 +1,27 @@
-# dictionary
-
-# students = {'name': 'kim inha', 'age': 23, 'eyes': [0.9, 1.1]}
-# # for k in students.keys():
-# # for k in students:
-# # for k in students.values():
-# for k, v in students.items():
-#     # print(k)
-#     print(f'{k} : {v}')
-# print(f"이름은 {students['name']}, 나이는 {students['age']}세", end=' ')
-# print(f'시력은 좌:{students["eyes"][0]}, 우:{students["eyes"][1]}')
-
-# alcohol dictionary
-
+# dict 함수 이용
 import random
 
-alcohol_foods = {
-    '맥주': '치킨',
-    '소주': '회',
-    '와인': '치즈',
-    '고량주': '유린기'
-}
+# alcohol_foods = {
+#     '맥주': '치킨',
+#     '소주': '회',
+#     '와인': '치즈',
+#     '고량주': '유린기'
+# }
+alcohol_foods = dict(맥주='치킨', 소주='회', 와인='치즈', 고량주='유린기')
 alcohol_list = list(alcohol_foods)  # key값들만 추출
 food_list = [food for food in alcohol_foods.values()]  # 밸류 추출, list에 추가 (append)
 # print(alcohol_list, food_list)  # 정상적으로 작성됐는지 확인용
+
+for food in enumerate(food_list):
+    print(food)  # 출력이 tuple 형태로 나옴, idx와 value값을 출력
+    print(food[1])  # idx값이 필요 없을 경우 2번째 방의 값들만 출력 (시퀀스), 언패킹
+
+# for i in range(len(food_list)):
+#     print(food_list[i])  # 구간을 설정하거나 값을 조정할 때 유익 but 잘못된 경우 오류가 날 가능성
+
+# for food in food_list
+#     print(food)  # 해당 for문이 조금 더 파이써닉 한 포문이라 할 수 있다(안정성)
+
 while True:
     alcohol = input(f'술을 선택 하세요. 1) {alcohol_list[0]} 2) {alcohol_list[1]} 3) {alcohol_list[2]} 4) {alcohol_list[3]} 5) 아무거나 6) 계산 '
                     f'\n메뉴 입력 : ')
@@ -43,3 +42,10 @@ while True:
         print(f'{random.choice(alcohol_list)}에 {random.choice(food_list)}을(를) 드리겠습니다.')
     else:
         print('해당하는 번호의 메뉴가 없습니다')
+
+
+# ** 사용해 결합하기
+
+first = {'a': 'agony', 'b': 'bliss'}
+second = {'b': 'bagels', 'c': 'candy'}
+print({**first, **second})
