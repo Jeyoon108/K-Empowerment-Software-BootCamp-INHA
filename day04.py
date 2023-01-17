@@ -1,25 +1,18 @@
-# tuple
-a = 'harry',
-b = ('harry',)
-c = ()  # empty tuple
-d = 'harry', 'ron'  # packing
-e = ('hermione')  # string
-f = ('harry', 'ron')  # packing
-g = ('hermione',)
-print(type(g))
-print(f + g)
-print(g)
-g = f + g
-print(g)
+# list
 
-print(f[1])
-x, y = f  # unpacking
-print(x)
-print(y)
+scores = ('B+', 'A+', 'C+')
+print(scores[1], scores[2])
+#scores[1] = 'C+'
+#scores[2] = 'A+'  # 이렇게 대입하는 것이 안됨 (오류)
 
-print(type(a))
-print(type(b))
-print(type(c))
-print(type(d))
-print(type(e))
-print(type(f))
+temp = list(scores)
+temp[1] = 'C+'
+temp[2] = 'A+'
+scores = tuple(temp)
+print(scores[1],scores[2])
+
+a = ['A', 'B', 'C', 'D', 'E']
+print(a[0:3])
+print(a)
+print(a.pop())
+print(a)
