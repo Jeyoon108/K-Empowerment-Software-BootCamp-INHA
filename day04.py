@@ -1,18 +1,37 @@
 # list
 
-scores = ('B+', 'A+', 'C+')
-print(scores[1], scores[2])
-#scores[1] = 'C+'
-#scores[2] = 'A+'  # 이렇게 대입하는 것이 안됨 (오류)
+# primes = [2, 19, 3.0, 5, 7, 11]
+# primes_sorted = sorted(primes)
+# print(primes)
+# print(primes_sorted)
 
-temp = list(scores)
-temp[1] = 'C+'
-temp[2] = 'A+'
-scores = tuple(temp)
-print(scores[1],scores[2])
+# mixed = ['6', '4', '5', 'A', '7', '강아지', 'Bow wow', 'b', '제윤']
+# mixed.sort(reverse=True)
+# print(mixed)
 
-a = ['A', 'B', 'C', 'D', 'E']
-print(a[0:3])
-print(a)
-print(a.pop())
-print(a)
+# a = [1, 2, 3]
+# b = a
+# print(b)
+# a[0] = 'surprise'
+# print(a, b)
+# b[0] = 'nope'
+# print(a, b)
+
+# a = [1, 2, 3]
+# b = a.copy()
+# c = list(a)
+# d = a[:]
+# e = a
+# a[2] = 'sw'
+# print(a, b, c, d, e)
+
+# deepcopy()
+import copy
+
+a = [1, 2, [5, 9]]
+b = a.copy()
+c = list(a)
+d = a[:]
+e = copy.deepcopy(a)
+a[2][1] = 'wow'
+print(a, b, c, d, e)
