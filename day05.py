@@ -97,6 +97,10 @@ def calculate_fee(args) -> dict:  # * 사용할 때 관용적으로 변수의 �
     return {'no_of_people': len(args), 'no_of_adult': adults, 'no_of_kid': kids, 'total_fee': total}
 
 
+print(calculate_fee.__doc__)
+help(calculate_fee)
+help(len)
+
 no_of_visitor = int(input('몇 분이세요? '))
 ages = [random.randint(1, 60) for age in range(no_of_visitor)]
 results = calculate_fee(ages)
