@@ -1,42 +1,23 @@
-# Function
+# closures
 
-def answer():
-    """
-    숫자 출력 함수
-    :return:
-    """
-    print(60)
+def calculate():
+    x = 1
+    y = 2
+    temp = 0
 
+    def add_sub(n):
+        # nonlocal temp  # 지역 변수를 전역 변수로 바꿀 수 있다.
+        temp = 0  # nonlocal temp로 했을 때와 다른 결과를 도출한다.
+        # x = 11  # local variable (지역 변수)
+        temp = temp + x + n - y
+        return temp
 
-def call_func(f):
-    """
-    매개변수로 함수를 넘겨 받아 실행
-    :param f: 매개변수가 함수인 함수
-    :return:
-    """
-    f()  # 넘겨 받은 함수 실행
+    return add_sub
 
 
-def subtract(n1, n2):
-    print(n1 - n2)
+c1 = calculate()  # 외부의 함수를 모두 실행한 후 return이 add_sub이므로 외부의 내용을 기억 한채로 closure 역할을 한다.
+for i in range(5):
+    print(c1(i))
 
-
-def run_func(f, arg1, arg2):
-    """
-    함수를 매개 변수로 받아 함수 안에서 해당 함수를 실행
-    :param f: 첫 번째 인수는 함수
-    :param arg1: 정수 값
-    :param arg2: 정수 값
-    :return:
-    """
-    f(arg1, arg2)
-
-
-a = (5, 7, -11)
-print(sum(a))
-
-
-# run_func(subtract, 99, 88)
-#
-# call_func(answer)
-# print(type(call_func))
+print(type(c1))
+print(c1)  # calculate의 add_sub이라는 족보(클로저임)를 나타냄
