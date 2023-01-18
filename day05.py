@@ -1,29 +1,32 @@
 # Function
-# 함수 원칙 중 하나는 단일 책임의 원칙 때문에 출력을 함수에서 하면 안 된다.
 
-def isprime(n):
+# def do_nothing():
+#     pass
+#
+#
+# mamamoo = ['화사', '솔라', '휘인', '문별']
+#
+# #print(mamamoo.pop())  # 삭제할 값 리턴 후 삭제
+# print(mamamoo.remove('문별'))  # 해당 요소 삭제, 값 리턴하지 않으므로 None 출력됨
+# print(mamamoo)
+
+# do_nothing()
+# print(do_nothing())
+
+def calculate_fee(*args):  # * 사용할 때 관용적으로 변수의 이름은 args를 사용한다. 핵심은 던져진 인수의 개수를 예측할 수 없을 때 사용됨
     """
-    매개변수로 받은 정수가 소수인지 여부를 판정하는 함수
-    :param n: integer number
-    :return: true or false
+    놀이공원 요금 계산 프로그램
+    :param args: ages
+    :return: 지불할 총 입장료
     """
-    if n <= 1:
-        return False
-    for k in range(2, n):
-        if n % k == 0:
-            return False
-    else:
-        return True
+    total = 0
+    for age in args:
+        if 19 <= age:  # adult
+            total = total + 10000
+        else:
+            total = total + 3000
+    return total
 
-help(isprime)
-#print(isprime(43))
 
-start = int(input("input start number : "))
-end = int(input("input end number : "))
-
-if end < start:
-    start, end = end, start
-
-for i in range(start, end+1):
-    if isprime(i):
-        print(i, end = ' ')
+print(calculate_fee(20, 20, 25))
+print(calculate_fee(45, 43, 10, 7))
