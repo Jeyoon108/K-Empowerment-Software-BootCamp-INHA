@@ -1,19 +1,23 @@
-# generator
+# generator 예제
 
-def a():  # generator
-    yield 1
-    yield 2
-    yield 3
+# decorator
+def document_it(func):
+    def new_function(*args,**kwargs):
+        print('Running function:', func.__name__)  # 실행중인 함수
+        print('Positional arguments:', args)  # 위치 기반 인수들
+        print('Keyword arguments:', kwargs)  # 키워드 기반 인수들
+        result = func(*args, **kwargs)
+        print('Result:', result)  # 실행 결과
+        return result
+    return new_function
 
 
-def b():  # normal function
-    return 1  # stop iteration
-    return 2
-    return 3
+def add_ints(a, b):
+    return a + b
 
 
-print(a(), b())  # 이 때 a값을 뽑으려면 for문을 돌려야함
-c = a()
-print(c)
-for i in c:
-    print(i)
+# manual decorator assignment (데커레이터 수동 할당)
+
+print(add_ints(3, 5))
+info_add_ints = document_it(add_ints)
+info_add_ints(3, 5)
