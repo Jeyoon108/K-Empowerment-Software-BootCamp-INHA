@@ -1,18 +1,11 @@
-# # Chap9 # 1
-# def good():
-#     return ['Harry', 'Ron', 'Hermione']
+# 코딩 예제 groups의 멤버를 출력하기
 
-
-# Chap9 # 2
-count = 0
-def get_odds():
-    for num in range(10):
-        if num % 2 == 1:
-            yield num
-
-
-odds = get_odds()
-for i in odds:
-    count += 1
-    if count == 3:
-        print(i)
+groups = {
+    '빅뱅': ['GD', '태양', '탑', '대성', '승리'],
+    '마마무': ['문별', '솔라', '휘인', '화사']
+}
+for group, members in groups.items():
+    print(f'{group}의 멤버 : ')
+    for member in members:
+        if member != '승리':
+            print(member)
