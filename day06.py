@@ -1,28 +1,57 @@
-# recursion
+# exception
 
-def factorial_iter(n):
-    """
-    반복문을 사용한 팩토리얼 함수
-    :param n: n!
-    :return: integer 팩토리얼 계산 결과 값
-    """
-    result = 1
-    for k in range(1, n + 1):
-        result = result * k
-    return result
+# def div_calc(a, b):
+#     """
+#     나누기 함수
+#     :param a: 분자
+#     :param b: 분모
+#     :return: 계산결과
+#     """
+#     return a / b
+#
+#
+# print(div_calc(15, 3))
+# print(div_calc(7, 0))
 
+# try:
+#     expr = input('분자 분모 입력 (띄어쓰기로 구분): ').split()
+#     print(int(expr[0]) / int(expr[1]))
+# # ValueError
+# # ZeroDivisionError
+# # IndexError
+# except ValueError as err1:
+#     print(f'숫자를 입력해주세요 ({err1})')
+# except ZeroDivisionError as err:
+#     print(err)
+#     print('분모에 0이 올 수 없습니다')
+# except IndexError:
+#     print('입력 값의 범위에 문제가 있습니다')
+# except Exception as other:
+#     print(f'예외 발생 ({other})')
+# else:  # 예외가 발생하지 않았을 때 try 후 동작
+#     print('프로그램 정상', end=' ')
+# finally:  # 예외 발생 여부와 상관없이 무조건 실행
+#     print('종료')
 
-def factorial_recu(n):
-    """
-    재귀 함수를 사용한 팩터리얼 계산 함수
-    :param n: n!
-    :return: 자기 자신을 호출 또는 1
-    """
-    if n == 1:  # 끝나는 조건
-        return 1
-    else:
-        return factorial_recu(n-1) * n
+# 사용자 정의 예외
 
-
-print(factorial_iter(5))
-print(factorial_recu(5))
+try:
+    raise Exception("쉬는 시간")
+    expr = input('분자 분모 입력 (띄어쓰기로 구분): ').split()
+    print(int(expr[0]) / int(expr[1]))
+# ValueError
+# ZeroDivisionError
+# IndexError
+except ValueError as err1:
+    print(f'숫자를 입력해주세요 ({err1})')
+except ZeroDivisionError as err:
+    print(err)
+    print('분모에 0이 올 수 없습니다')
+except IndexError:
+    print('입력 값의 범위에 문제가 있습니다')
+except Exception as other:
+    print(f'예외 발생 ({other})')
+else:  # 예외가 발생하지 않았을 때 try 후 동작
+    print('프로그램 정상', end=' ')
+finally:  # 예외 발생 여부와 상관없이 무조건 실행
+    print('종료')
