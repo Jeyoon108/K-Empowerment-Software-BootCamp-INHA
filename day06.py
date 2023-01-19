@@ -12,12 +12,11 @@ def document_it(func):
     return new_function
 
 
+@document_it
 def add_ints(a, b):
     return a + b
 
 
-# manual decorator assignment (데커레이터 수동 할당)
+# # @decorator_name은 def에 직접 사용
 
-print(add_ints(3, 5))
-info_add_ints = document_it(add_ints)
-info_add_ints(3, 5)
+add_ints(3, 5)
