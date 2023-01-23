@@ -1,10 +1,12 @@
 # A to Z reminding
 
-# Ch7 practice # 1
+# Ch7 practice # 4 ~ # 7
 
-year = int(input("input a year : "))
-years_list = []
-for i in range(6):
-    years_list.append(year + i)
+things = ["mozzarella", "cinderella", "salmonella"]
 
-print(years_list)
+things[1] = things[1].capitalize()
+print(things)
+things[0] = things[0].upper()
+print(things)
+things.pop()
+print(things)
