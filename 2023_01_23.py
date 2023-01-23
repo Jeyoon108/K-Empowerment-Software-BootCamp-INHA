@@ -1,21 +1,18 @@
 # A to Z reminding
 
-# mutable, immutable
-z = {'A': 'a', 'B': 'b', 'C': 'c'}
-x = z
-z['A'] = '이거'
-print(z)
-print(x)
-
-# Ch4 practice
+# Ch4 practice #2
 import random
 
-secret = random.randint(1, 10)
-guess = random.randint(1, 10)
+small = random.choice([True, False])
+green = random.choice([True, False])
 
-if guess < secret:
-    print(f'gusee: {guess}, secret: {secret} \ntoo low')
-elif guess > secret:
-    print(f'gusee: {guess}, secret: {secret} \ntoo high')
+if small:
+    if green:
+        print("It's a pea")
+    else:
+        print("It's a cherry")
 else:
-    print(f'gusee: {guess}, secret: {secret} \njust right')
+    if green:
+        print("It's a watermelon")
+    else:
+        print("It's a pumpkin")
