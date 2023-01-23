@@ -1,12 +1,11 @@
 # A to Z reminding
 
-# Ch7 practice # 4 ~ # 7
+# Ch7 practice # 8 ~ # 9
 
-things = ["mozzarella", "cinderella", "salmonella"]
+surprise = ["Groucho", "Chico", "Harpo"]
 
-things[1] = things[1].capitalize()
-print(things)
-things[0] = things[0].upper()
-print(things)
-things.pop()
-print(things)
+surprise[-1] = surprise[-1].lower()
+harpo_list = list(surprise[-1])
+harpo_list.reverse()
+surprise[-1] = ''.join(harpo_list).capitalize()
+print(surprise)
