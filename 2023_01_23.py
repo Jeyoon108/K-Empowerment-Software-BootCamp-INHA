@@ -17,5 +17,3 @@ numbers = list()
 for number in range(0, 4):
     numbers.append(-number + 3)
 print(numbers)
-
-
