@@ -1,37 +1,30 @@
 # A to Z reminding
 
-# Ch5 practice # 1
+# Ch5 practice # 4
 
-song = """When an eel grabs your arm,
-And it causes great harm,
-That's - a moray!"""
+salutation = 'Mr.'
+name = 'Kim'
+product = 'pen'
+verbed = 'broken'
+room = 'room'
+animals = 'dogs'
+amount = 'account'
+percent = '100'
+spokesman = 'Jason'
+job_title = 'CEO'
 
-song = song.replace(' m', ' M')
+letter = '''Dear {} {},
+    Thank you for your letter. We are sorry that our {} \
+{} in your {}. Please note that it should never \
+be used in a {}, especially near any {}.
 
-print(song)
+    Send us your receipt and {} for shipping and handling. \
+We will send you another {} that, in our tests, \
+is {}% less likely to have {}.
 
-# Ch5 practice # 2
-print()
+    Thank you for your support.
+    Sincerely,
+    {}
+    {}'''.format(salutation, name, product, verbed, room, room, animals, amount, product, percent, verbed, spokesman, job_title)
 
-questions = ["We don't serve strings around here. Are you a string?",
-             "What is said on Father's Day in the forest?",
-             "What makes the sound 'Sis! Boom! Bah!'?"
-             ]
-answers = ["An exploding sheep.",
-           "No, I'm a frayed knot.",
-           "'Pop!' goes the weasel."
-           ]
-
-for k in range(3):
-    print(f'Q : {questions[k]}\nA : {answers[k]}')
-
-# Ch5 practice # 3
-print()
-
-a = 'roast beef'
-b = 'ham'
-c = 'head'
-d = 'clam'
-
-print("My kitty cat likes %s, My kitty cat likes %s, My kitty cat fell on his %s \
-And now thinks he's a %s." % (a, b, c, d))
+print(letter)
