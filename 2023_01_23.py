@@ -1,15 +1,10 @@
 # A to Z reminding
 
-# Ch6 practice # 3
-import random
-guess_me = random.randint(0, 9)
-print(guess_me)
+# Ch7 practice # 1
 
-for number in range(10):
-    if number < guess_me:
-        print(f'too low, {number}')
-    elif number == guess_me:
-        print('found it!')
-        break
-    else:
-        print('oops')
+year = int(input("input a year : "))
+years_list = []
+for i in range(6):
+    years_list.append(year + i)
+
+print(years_list)
