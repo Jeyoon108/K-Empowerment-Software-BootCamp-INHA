@@ -1,17 +1,15 @@
 # A to Z reminding
 
-# Ch8 practice # 13
+# Ch9 practice recursion
 
-keys = ('optimist', 'pessimist', 'troll')
-values = ('The glass is half full', 'The glass is half empty', 'How did you get a glass?')
+def fib(n):
+    """
+    피보나치 수열
+    :param n: f(n)
+    :return: 1 or fib(n-1) + fib(n-2)
+    """
+    if n < 3:
+        return 1
+    return fib(n-1) + fib(n-2)
 
-thing = dict(zip(keys, values))
-print(thing)
-
-# Ch8 practice # 14
-
-titles =['Creature of Habit', 'Crewel Fate', 'Sharks On a Plane']
-plots = ['A nun turns into a monster', 'A haunted yarn shop', 'Check your exits']
-
-movies = dict(zip(titles, plots))
-print(movies)
+print(fib(8))
