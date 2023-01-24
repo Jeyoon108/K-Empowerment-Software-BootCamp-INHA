@@ -1,8 +1,17 @@
 # A to Z reminding
 
-# Ch8 practice # 12
+# Ch8 practice # 13
 
-gen = (num for num in range(10))
+keys = ('optimist', 'pessimist', 'troll')
+values = ('The glass is half full', 'The glass is half empty', 'How did you get a glass?')
 
-for x in gen:
-    print('Got', x)
+thing = dict(zip(keys, values))
+print(thing)
+
+# Ch8 practice # 14
+
+titles =['Creature of Habit', 'Crewel Fate', 'Sharks On a Plane']
+plots = ['A nun turns into a monster', 'A haunted yarn shop', 'Check your exits']
+
+movies = dict(zip(titles, plots))
+print(movies)
