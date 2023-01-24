@@ -1,11 +1,8 @@
 # A to Z reminding
 
-# Ch8 practice # 10 ~ # 11
+# Ch8 practice # 12
 
-squares = {keys: keys * keys  for keys in range(10)}
+gen = (num for num in range(10))
 
-print(squares)
-
-odd_nums = {sets for sets in range(10) if sets % 2 == 1}
-
-print(odd_nums)
+for x in gen:
+    print('Got', x)
