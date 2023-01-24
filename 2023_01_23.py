@@ -1,11 +1,11 @@
 # A to Z reminding
 
-# Ch8 practice # 6 ~ #9
+# Ch8 practice # 10 ~ # 11
 
-life = {'animals': {'cats': 'Henri', 'octopi': 'Grumpy', 'emus': 'Lucy'}, 'plants': [],'other': []}
+squares = {keys: keys * keys  for keys in range(10)}
 
-print(list(life.keys()))
+print(squares)
 
-print(list(life['animals'].keys()))
+odd_nums = {sets for sets in range(10) if sets % 2 == 1}
 
-print(life['animals']['cats'])
+print(odd_nums)
