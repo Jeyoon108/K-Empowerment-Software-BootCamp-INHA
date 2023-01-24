@@ -1,14 +1,11 @@
 # A to Z reminding
 
-# Ch8 practice # 1 ~ # 5
+# Ch8 practice # 6 ~ #9
 
-e2f = {'dog': 'chien', 'cat': 'chat', 'walrus': 'morse'}
+life = {'animals': {'cats': 'Henri', 'octopi': 'Grumpy', 'emus': 'Lucy'}, 'plants': [],'other': []}
 
-print(e2f['walrus'])
+print(list(life.keys()))
 
-f2e = {values: keys for keys, values in e2f.items()}
-print(f2e)
+print(list(life['animals'].keys()))
 
-print(f2e['chien'])
-
-print(list(e2f.keys()))
+print(life['animals']['cats'])
