@@ -17,6 +17,7 @@ class Adele(Maple):
         super().__init__(name)
         self.job = "아델"
         self.skills = ['디바이드', '블로섬', '게더링', '다이크']
+        print(f'{self.name}가 {self.job}(으)로 전직합니다.')
 
 
     def status(self):
@@ -29,9 +30,11 @@ class Adele(Maple):
 
 class Evan(Maple):
     def __init__(self, name):
-        super().__init__(name)
+        # super().__init__(name)
+        self.name = name
         self.job = "에반"
         self.skills = ['서클 오브 마나IV', '드래곤 브레스', '서클 오브 어스', '서클 오브 썬더']
+        print(f'{self.name}가 {self.job}(으)로 전직합니다.')
 
 
     def status(self):
@@ -42,14 +45,23 @@ class Evan(Maple):
     def skill(self,idx):
         print(f'{self.name}의 {self.skills[idx]}스킬 사용!')
 
-m0 = Maple('초보자')
-m0.status()
-print()
-m1 = Adele('킹왕짱')
-m1.status()
-m1.skill(2)
-m1.skill(1)
-print()
-m2 = Evan('도끼차')
-m2.status()
-m2.skill(0)
+nAme = input("캐릭터 이름을 입력하세요 : ")
+
+mm0 = Maple(nAme)
+mm0.status()
+mm0 = Evan(nAme)
+mm0.status()
+mm0.skill(2)
+
+#
+# m0 = Maple('초보자')
+# m0.status()
+# print()
+# m1 = Adele('킹왕짱')
+# m1.status()
+# m1.skill(2)
+# m1.skill(1)
+# print()
+# m2 = Evan('도끼차')
+# m2.status()
+# m2.skill(0)
