@@ -1,25 +1,26 @@
 # A to Z reminding
 
-# Ch10 practice Getter/Setter
+# Ch10 practice Getter/Setter + property
 
-class Duck():
-    def __init__(self, input_name):
-        self.hidden_name = input_name
+class Person:
+    def __init__(self, first_name, last_name, input_age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.hidden_age = input_age
 
+    def get_age(self):
+        return self.hidden_age
 
-    def get_name(self):
-        print('inside the getter')
-        return self.hidden_name
+    def set_age(self, age):
+        if age < 0:
+            raise ValueError("Invalid age")
+        self.hidden_age = age
 
+    age = property(get_age, set_age)
 
-    def set_name(self, input_name):
-        print('inside the setter')
-        self.hidden_name = input_name
-
-
-don = Duck('Donald')
-print(don.get_name())
-don.set_name('Donna')
-print(don.get_name())
-# don.hidden_name = 'Go'
-# print(don.get_name())
+person = Person("John", "Doe", 20)
+print(person.age)
+person.age = person.age + 1
+print(person.age)
+person.age = 23
+print(person.age)
