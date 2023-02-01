@@ -8,15 +8,16 @@ class Person:
         self.last_name = last_name
         self.hidden_age = input_age
 
-    def get_age(self):
+    @property
+    def age(self):
         return self.hidden_age
 
-    def set_age(self, age):
+    @age.setter
+    def age(self, age):
         if age < 0:
             raise ValueError("Invalid age")
         self.hidden_age = age
 
-    age = property(get_age, set_age)
 
 person = Person("John", "Doe", 20)
 print(person.age)
