@@ -1,4 +1,4 @@
-# game - 중복코드 제거, getter/setter
+# game - 중복코드 제거, getter/setter - > property
 
 # class Pokemon:
 #     def __init__(self):  # 객체 생성 시 동작
@@ -22,12 +22,13 @@ class Pokemon:
         self.hidden_owner = owner
 
     def info(self):  # 멤버 함수
-        print(f"{self.get_owner()}의 포켓몬이 사용 가능한 스킬")
+        print(f"{self.owner}의 포켓몬이 사용 가능한 스킬")
         for i in range(len(self.skills)):
             print(f'{i+1} : {self.skills[i]}')
         # for skill in self.skills:  # 번호 붙이고싶을 때 len이나 enmerate?를 쓰는게 좋다 위의 수정본이 적용본
         #     print(f'{skill}')
 
+    owner = property(get_owner, set_owner)
 
     def attack(self, idx):
         print(f'{self.skills[idx]} 스킬 시전!')
@@ -41,7 +42,7 @@ class Pikachu(Pokemon):  # inheritance
 
 
     def attack(self, idx):  # override
-        print(f'{self.get_owner()}의 {self.name}가 {self.skills[idx]} (번개 속성) 스킬 시전!')
+        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} (번개 속성) 스킬 시전!')
 
 
 
@@ -58,7 +59,7 @@ class Ggoboogi(Pokemon):  # inheritance
 
 
     def attack(self, idx):  # override
-        print(f'{self.get_owner()}의 {self.name}가 {self.skills[idx]} (물 속성) 스킬 시전!')
+        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} (물 속성) 스킬 시전!')
 
 
     def swim(self):
@@ -73,7 +74,7 @@ class Pairi(Pokemon):  # inheritance
 
 
     def attack(self, idx):  # override
-        print(f'{self.get_owner()}의 {self.name}가 {self.skills[idx]} (북 속성) 스킬 시전!')
+        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} (북 속성) 스킬 시전!')
 
 
 while True:
