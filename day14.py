@@ -1,4 +1,5 @@
-# game - 중복코드 제거, getter/setter - > property
+# game - 중복코드 제거, getter/setter - > property -> decorator
+# __hiddenfield
 
 # class Pokemon:
 #     def __init__(self):  # 객체 생성 시 동작
@@ -11,15 +12,16 @@
 
 class Pokemon:
     def __init__(self, owner, skills):  # 객체 생성 시 동작 # skill을 구현할 때 스킬이 하나가 아니니 자료구조를 준비한다 (만만한게 리스트)
-        self.hidden_owner = owner
+        self.__hidden_owner = owner  # like private
         self.skills = skills.split('/')
         print(f"포켓몬 생성:", end=' ')
 
-    def get_owner(self):
-        return self.hidden_owner
-
-    def set_owner(self, owner):
-        self.hidden_owner = owner
+    @property
+    def owner(self):
+        return self.__hidden_owner
+    @owner.setter
+    def owner(self, owner):
+        self.__hidden_owner = owner
 
     def info(self):  # 멤버 함수
         print(f"{self.owner}의 포켓몬이 사용 가능한 스킬")
@@ -28,7 +30,6 @@ class Pokemon:
         # for skill in self.skills:  # 번호 붙이고싶을 때 len이나 enmerate?를 쓰는게 좋다 위의 수정본이 적용본
         #     print(f'{skill}')
 
-    owner = property(get_owner, set_owner)
 
     def attack(self, idx):
         print(f'{self.skills[idx]} 스킬 시전!')
@@ -89,6 +90,9 @@ while True:
                 n = input('플레이어 이름 입력 : ')
                 s = input('사용 가능한 기술 입력(/로 구분하여 입력) : ')
                 p = Pikachu(n, s)
+                # p.owner = "한지우"  # setter, 허가된 접근
+                # p.__hidden_owner = "한지우"  # 허가되지 않은 접근 >> __hidden_owner를 만들어줌으로써 접근이 되지않는것을 확인할 수 있음 / 앞에 클래스를 붙이면 되긴한다
+                # 파이썬은 자바와달리 완벽한 프라이빗은 존재하지않는다
                 break
             elif pokemon == '2':
                 n = input('플레이어 이름 입력 : ')
