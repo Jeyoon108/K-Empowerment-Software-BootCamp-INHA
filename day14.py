@@ -11,10 +11,12 @@
 # print(p1, p2)  # 서로 다른 메모리 주소를 가진다.
 
 class Pokemon:
+    count = 0
     def __init__(self, owner, skills):  # 객체 생성 시 동작 # skill을 구현할 때 스킬이 하나가 아니니 자료구조를 준비한다 (만만한게 리스트)
         self.__hidden_owner = owner  # like private
         self.skills = skills.split('/')
         print(f"포켓몬 생성:", end=' ')
+        Pokemon.count += 1
 
     @property
     def owner(self):
@@ -43,7 +45,7 @@ class Pikachu(Pokemon):  # inheritance
 
 
     def attack(self, idx):  # override
-        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} (번개 속성) 스킬 시전!')
+        print(f'[피카피카]{self.owner}의 {self.name}가 {self.skills[idx]} (번개 속성) 스킬 시전!')
 
 
 
@@ -60,7 +62,7 @@ class Ggoboogi(Pokemon):  # inheritance
 
 
     def attack(self, idx):  # override
-        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} (물 속성) 스킬 시전!')
+        print(f'[꼬북꼬북]{self.owner}의 {self.name}가 {self.skills[idx]} (물 속성) 스킬 시전!')
 
 
     def swim(self):
@@ -75,10 +77,11 @@ class Pairi(Pokemon):  # inheritance
 
 
     def attack(self, idx):  # override
-        print(f'{self.owner}의 {self.name}가 {self.skills[idx]} (북 속성) 스킬 시전!')
+        print(f'[파일파일]{self.owner}의 {self.name}가 {self.skills[idx]} (북 속성) 스킬 시전!')
 
 
 while True:
+    print(f'총 {Pokemon.count}마리의 포켓몬이 생성되었습니다.')
     menu = input('1) 포켓몬 생성  2) 프로그램 종료 : ')
     if menu == '2':
         print('프로그램을 종료합니다')
